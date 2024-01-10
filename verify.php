@@ -9,10 +9,21 @@
     <h1 style="text-align: center;">Webboard PRAEWPAN</h1>
     <hr>
     <div style="text-align: center;">
-    เข้าสู่ระบบด้วย<br>
-    Login = <?php echo $_POST["Login"]?><br>
-    Password =  <?php echo $_POST["password"]?><br>
+    
+    <?php
+    if($_POST['Login'] == "admin" && $_POST['password']=="ad1234")
+        echo "ยินดีต้อนรับคุณ ADMIN";
+    elseif(($_POST['Login'] == "member") && ($_POST['password'] =="mem1234"))
+        echo "ยินดีต้อนรับคุณ MEMBER";
+    else
+        echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+
+    
+    ?>
+   
     </div>
+    <div style="text-align: center;"> <a href="index.php" >กลับไปหน้าหลัก</a>
+</div>
    
     
 </body>
