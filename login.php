@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(isset($_SESSION['id'])){ 
+    echo header("location:index.php") ;
+    die();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +27,7 @@
 
         </table>
     </form> <br><br>
-<div style="text-align: center;">    ถ้ายังไม่ได้เป็นสมาชิก <a href="register.html" >กรุณาสมัครสมาชิก</a>
+<div style="text-align: center;">    ถ้ายังไม่ได้เป็นสมาชิก <a href="register.php" >กรุณาสมัครสมาชิก</a>
 </div>
 </body>
 </html>
