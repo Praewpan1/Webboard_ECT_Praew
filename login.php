@@ -13,21 +13,53 @@ if(isset($_SESSION['id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- 3 บรรทัดบนคือเรียกกใช้งาน Bootstrap -->
     <title>Webboard PRAEWPAN</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Webboard PRAEWPAN</h1>
-    <hr>
-    <form action="verify.php" method="post">
-            <table style="border: 2px solid black ;width: 40%;"align ="center">
-            <tr><td colspan="2" style="background-color: #6CD2FE;">เข้าสู่ระบบ</td></tr>
-            <tr><td>Login</td><td><input type="text" name="Login" size="55" required></td></tr><br>
-            <tr><td>Password</td><td><input type="password" name="password" size="55" required></td></tr>
-            <tr><td colspan="2"align =center><input type="submit" value="Login "required></td></tr>
+<div class="container-lg">
+    <h1 style="text-align: center;"class="mt-3">Webboard PRAEWPAN</h1>
+    <?php include"nav.php"?>
+    
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>  <!-- l. -->
+         <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+            <?php
+            if(isset($_SESSION['error'])){ //เช็คว่าใส่ชื่อกับรหัสถูกไหม
+                echo "<div class='alert alert-danger'>ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง</div>";
+                unset($_SESSION['error']); //เคลียเวลารีจะได้ไม่ขึ้นอันเดิม
+            }
+            ?>
+            <div class="card bg-light text-dark"> 
+                <div class="card-header">เข้าสู่ระบบ</div>
+                <div class="card-body">
+                    <form action="verify.php" method="post">
+                        <div class="form-group">
+                            <label for="login" class="form-label">Login</label>
+                            <input type="text" name="Login" id="login" class="form-control">
+                        </div>
+                        <div  class="form-grop mt-3" >
+                            <label for="pwd" class="form-label">Password</label>
+                            <input type="password" name="password" id="pwd" class="form-control">
+                            
+                        </div>
+                        <div class="mt-3  d-flex justify-content-center"  >
+                        <button type="submit" class="btn btn-secondary btn-sm me-2">Login</button>
+                        <button type="reset" class="btn btn-danger btn-sm ">Reset</button>
 
-        </table>
-    </form> <br><br>
-<div style="text-align: center;">    ถ้ายังไม่ได้เป็นสมาชิก <a href="register.php" >กรุณาสมัครสมาชิก</a>
+                        </div>
+                    </form>
+                </div>                
+            </div>
+        </div>
+  
+        <div class="col-lg-4 col-md-3 col-sm-2 col-1" ></div>
+    </div>
+    <br>
+<div style="text-align: center;">    ถ้ายังไม่ได้เป็นสมาชิก <a href="register.php" >กรุณาสมัครสมาชิก</a></div>
 </div>
 </body>
 </html>
