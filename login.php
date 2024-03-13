@@ -18,6 +18,7 @@ if(isset($_SESSION['id'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- 3 บรรทัดบนคือเรียกกใช้งาน Bootstrap -->
     <title>Webboard PRAEWPAN</title>
+    
 </head>
 <body>
 <div class="container-lg">
@@ -41,9 +42,15 @@ if(isset($_SESSION['id'])){
                             <label for="login" class="form-label">Login</label>
                             <input type="text" name="Login" id="login" class="form-control">
                         </div>
-                        <div  class="form-grop mt-3" >
+                        <div  class="form-group mt-3" >
                             <label for="pwd" class="form-label">Password</label>
-                            <input type="password" name="password" id="pwd" class="form-control">
+                            <div class="input-group d-flex justify-content-between">
+                                <input type="password" name="password" id="pwd" class="form-control">
+                                <span class="input-group-text" onclick="password_show_hide()">
+                                    <i class="bi bi-eye-fill" id="show_eye"></i>
+                                    <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
+                                </span>
+                            </div>
                             
                         </div>
                         <div class="mt-3  d-flex justify-content-center"  >
@@ -61,5 +68,23 @@ if(isset($_SESSION['id'])){
     <br>
 <div style="text-align: center;">    ถ้ายังไม่ได้เป็นสมาชิก <a href="register.php" >กรุณาสมัครสมาชิก</a></div>
 </div>
+<script>
+    function password_show_hide(){
+        let x=document.getElementById("pwd");
+        let show_eye=document.getElementById("show_eye");
+        let hide_eye=document.getElementById("hide_eye");
+        hide_eye.classList.remove("d-none"); //d-noneคือคลาสปิด ไปเอาออกคือจะแสดง
+        if(x.type==="password"){
+            x.type="text";
+            show_eye.style.display="none";
+            hide_eye.style.display="block";
+        }else{
+            x.type="password";
+            show_eye.style.display="block";
+            hide_eye.style.display="none";
+        }
+
+    }
+</script>
 </body>
 </html>

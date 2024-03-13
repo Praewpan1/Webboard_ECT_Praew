@@ -2,9 +2,16 @@
 session_start();
 if(isset($_SESSION['id'])&& $_SESSION['role']=='a' ){ //ถ้าล้อคอินมา ฿฿ ล้อคอินมาเป็น admin
     $id =$_GET['id'];
-    echo"ลบกระทู้ หมายเลข $id";
-}
-else{
+    $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
+    $sql ="DELETE FROM post WHERE id=$id";
+    $conn->exec($sql);
+    $sql="DELETE FROM comment WHERE post_id=$id";
+    $conn->exec($sql);   //ลบ
+    $conn=null;
+    header("location:index.php");
+    die();
+   
+}else{
     header("location:index.php");
     die();
 }

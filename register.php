@@ -20,6 +20,16 @@ if(isset($_SESSION['id'])){
     <title>Webboard PRAEWPAN</title>
 </head>
 <body>
+    <script>
+        function OnBlurPwd(){
+            let pwd=document.getElementById("pwd") ; //documentทั้งหมด
+            let pwd2=document.getElementById("pwd2") ;
+            if(pwd.value!==pwd2.value){
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd2.value="";
+            }
+        }
+    </script>
     <div class="container-lg">
     <h1 style="text-align: center;" class="mt-3">Webboard PRAEWPAN</h1>
     <?php include"nav.php"?>
@@ -53,7 +63,14 @@ if(isset($_SESSION['id'])){
                             <label for="pwd" class="col-lg-3 col-form-label">รหัสผ่าน</label>
                             <div class="col-lg-9">
                                 <input id="pwd" type="password" name="password" class="form-control" required>
-                            </div>
+                            </div>                           
+                        </div>
+                        <div class="row mt-3">
+                            <label for="pwd2" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ</label>
+                            <div class="col-lg-9">
+                                <input id="pwd2" type="password" name="password2" onblur="OnBlurPwd()" class="form-control" required>
+                            </div> 
+                            
                         </div>
                         <div class="row mt-3">
                             <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล</label>
