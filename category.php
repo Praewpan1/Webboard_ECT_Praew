@@ -9,12 +9,12 @@ session_start();
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Webboard nine</title>
+    <title>Webboard PRAEWPAN</title>
 </head>
 
 <body>
     <div class="container-lg ">
-            <h1 style="text-align: center;" class="mt-3">Webboard KakKak</h1>
+            <h1 style="text-align: center;" class="mt-3">Webboard PRAEWPAN</h1>
             <?php include "nav.php" ?>
         <div class="row mt-4">
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
