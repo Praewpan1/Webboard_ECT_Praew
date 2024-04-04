@@ -20,8 +20,8 @@
 
             <?php 
             $conn =new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");//ไปทำความเข้าใจ 22-33
-            $sql="select post.title,post.content,post.post_date,user.login
-            from post inner join user on 
+            $sql="SELECT post.title,post.content,post.post_date,user.login
+            FROM post INNER JOIN user ON 
             (post.user_id=user.id) where post.id=$_GET[id]";  //3.54
             $result=$conn->query($sql);
             while($row=$result->fetch()){
@@ -35,8 +35,8 @@
 
             <?php 
             $conn =new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
-            $sql="select comment.content ,comment.post_date,user.login
-            from comment inner join user on 
+            $sql="SELECT comment.content ,comment.post_date,user.login
+            FROM comment INNER JOIN user ON 
             (comment.user_id=user.id) where comment.post_id=$_GET[id]"; 
             $result=$conn->query($sql);
             $i=1;
