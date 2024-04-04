@@ -2,8 +2,6 @@
 
 session_start();
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +16,6 @@ session_start();
         function myFunction(){
             let r=confirm("ต้องการจะลบจริงหรือไม่?");
             return r;
-        }
-        function edittxt(name){
-            var button = document.getElementById('button');
-            button.innerHTML=name;
         }
     </script>
 </head>

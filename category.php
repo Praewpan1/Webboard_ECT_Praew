@@ -11,7 +11,6 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Webboard PRAEWPAN</title>
 </head>
-
 <body>
     <div class="container-lg ">
             <h1 style="text-align: center;" class="mt-3">Webboard PRAEWPAN</h1>
@@ -79,8 +78,6 @@ session_start();
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>

@@ -12,10 +12,7 @@ SET title='$title',content='$content'
 WHERE id=$id ";
 $conn->query($sql);
 $conn=null;
-
 $_SESSION['update']="success";
-
-
 header("location:editpost.php?id=$id ");
     die();
 ?>
